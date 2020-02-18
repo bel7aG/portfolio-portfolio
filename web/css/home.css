@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container > div:first-child,
+.container > div:first-child > img {
+  height: 100%;
+  overflow: hidden;
+}
+
+.container > div:first-child > div {
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+}
+
+.container > div:first-child > div > h1 {
+  text-align: center;
+}
+
+.container > div:first-child > div > h1:first-child {
+  color: #666;
+  text-transform: uppercase;
+}
+
+.container > div:first-child > div > h1:last-child {
+  color: #aaa;
+}
+
+.container > div:first-child > img {
+  cursor: none;
+  display: block;
+  width: 26rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  transition: transform 3s ease-out;
+}
+
+.container > div:first-child > img:hover {
+  transform: rotate(36000deg);
+}
+
+.container > ul {
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 16rem));
+
+  justify-content: space-evenly;
+  display: grid;
+  align-items: center;
+  gap: 5rem 2rem;
+
+  max-width: 90rem;
+  width: 100%;
+}
+
+.container > ul > li {
+  white-space: nowrap;
+  margin: 0 auto;
+  background-color: #f77;
+  border-radius: 6px;
+  padding: 1rem 2rem;
+  line-height: 4rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  min-width: 14rem;
+  max-width: 18rem;
+}

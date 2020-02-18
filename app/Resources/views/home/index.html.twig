@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset('css/home.css') }}"/>
+{% endblock %}
+
+
+{% block body %}
+
+
+  <div class="container">
+    <div>
+      <img src="{{ asset('assets/images/belhassen-gharsallah.jpg') }}" alt="me"/>
+      <div>
+        <h1>{{ name }}</h1>
+        <h1>{{ role|upper }}</h1>
+      </div>
+    </div>
+
+    <ul>
+      {% for skill in skills %}
+      <li>{{skill}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div>
+    <h1>Works</h1>
+    <div>
+      {% for work in works %}
+      <a target="_blank" href={{work}}>{{work}}</a>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block stylesheets %}
+<style>
+  div > h1 {
+    padding: 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 4rem !important;
+    color: #666;
+  }
+
+  div > h1, div > div:nth-child(2) {
+    margin: 0 auto;
+  }
+
+  div > div:nth-child(2) {
+    max-width: 76rem;
+  }
+
+  
+  div > h1 {
+    max-width: 90rem;
+  }
+
+   div > div:nth-child(2) > a {
+    background-color: #f77;
+    font-weight: 700;
+    display: block;
+    padding: 4rem 0;
+    text-align: center;    
+    letter-spacing: 1px;
+    color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    transition: all .4s ease;
+  }
+
+
+
+  div > div:nth-child(2) > a:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
+  div > div:nth-child(2) > a:hover  {
+    transform: scale(1.08);
+    font-size: 2rem;
+    background-color: #fff;
+    color: #f77;
+    box-shadow: 0 0 2rem rgba(0 ,0 ,0 , 0.21);
+  }
+
+
+</style>
+{% endblock %}
