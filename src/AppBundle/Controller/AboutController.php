@@ -15,9 +15,12 @@ class AboutController extends Controller
      */
     public function indexAction() {
       return $this->render('about/index.html.twig', [
-        'name' => 'Belhassen Gharsallah',
-        'description' => 'Fullstack Developer.',
-        'skills' => ['Javascript', 'reactjs', 'CSS3']
+        'name' => 'Belhassen',
+        'description' => 'Fullstack Developer with a passion for design. I have
+        experience working with Java, Python, C, C# and countless other
+        frontend and backend frameworks and tools, but I spend most of my
+        time fighting with Javascript, React, React Native, NestJS, Typescript, NoSQL, CSS, SASS preprocessor and others.',
+        'links' => ['https://www.linkedin.com/in/bel7ag/', 'https://github.com/bel7aG']
       ]);
     }
 }

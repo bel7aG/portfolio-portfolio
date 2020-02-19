@@ -1,11 +1,87 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-  <div>
-    <ul>
-      <h1></h1>
-    </ul>
+  <div class="about">
+    <div>
+      <h1>Hi, I am {{ name }}!</h1>
+      <h2>{{ description }}</h2>
+    </div>
+
+      <div>
+        {% for link in links %}
+        <div>
+          <a href={{link}} target="_blank">{{link}}</a>
+        </div>
+        {% endfor %}
+      </div>
   </div>
 {% endblock %}
 
 
+
+{% block stylesheets %}
+<style>
+  .about {
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+  
+  .about > div:first-child > h1 {
+    padding: 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 4rem !important;
+    color: #666;
+  }
+
+  .about > div:first-child > h2 {
+    color: #777;
+    line-height: 6rem;
+    font-weight: 200;
+  }
+  
+  .about > div:not(:first-child):last-child {
+    margin-top: 4rem;
+  }
+  
+  .about > div:not(:first-child):last-child > div:not(:last-child){
+    margin-bottom: 1rem;
+  }
+
+  .about > div:not(:first-child):last-child > div {
+    max-width: 36rem;
+    position: relative;
+    padding: 2rem;
+    color: #f77;
+    transition: all .4s ease;
+  }
+
+  .about > div:not(:first-child):last-child > div::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: #f77;
+    transition: all 1.1s ease;
+  }
+
+  .about > div:not(:first-child):last-child > div:nth-child(odd)::before {
+    left: 0;
+  }
+  
+  .about > div:not(:first-child):last-child > div:nth-child(even)::before {
+    right: 0;
+  }
+  
+  .about > div:not(:first-child):last-child > div:hover {
+    color: #fff;
+  }
+
+  .about > div:not(:first-child):last-child > div:hover::before {
+    width: 100%;
+  }
+
+</style>
+{% endblock %}
